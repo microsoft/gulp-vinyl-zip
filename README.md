@@ -1,5 +1,7 @@
 # @vscode/gulp-vinyl-zip
 
+[![Build Status](https://dev.azure.com/monacotools/Monaco/_apis/build/status%2Fnpm%2Fvscode%2Fgulp-vinyl-zip?branchName=main)](https://dev.azure.com/monacotools/Monaco/_build/latest?definitionId=488&branchName=main)
+
 A library for creating and extracting ZIP archives from/to streams.
 
 Uses [yazl](https://github.com/thejoshwolfe/yazl)

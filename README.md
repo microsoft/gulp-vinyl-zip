@@ -1,6 +1,4 @@
-# gulp-vinyl-zip
-
-[![CI](https://github.com/joaomoreno/gulp-vinyl-zip/actions/workflows/ci.yml/badge.svg)](https://github.com/joaomoreno/gulp-vinyl-zip/actions/workflows/ci.yml)
+# @vscode/gulp-vinyl-zip
 
 A library for creating and extracting ZIP archives from/to streams.
 
@@ -13,7 +11,7 @@ and [yauzl](https://github.com/thejoshwolfe/yauzl).
 
 ```javascript
 var gulp = require('gulp');
-var zip = require('gulp-vinyl-zip');
+var zip = require('@vscode/gulp-vinyl-zip');
 
 gulp.task('default', function () {
 	return zip.src('src.zip')
@@ -26,7 +24,7 @@ or
 
 ```javascript
 var gulp = require('gulp');
-var zip = require('gulp-vinyl-zip');
+var zip = require('@vscode/gulp-vinyl-zip');
 
 gulp.task('default', function () {
 	return gulp.src('src.zip')
@@ -40,7 +38,7 @@ gulp.task('default', function () {
 
 ```javascript
 var gulp = require('gulp');
-var zip = require('gulp-vinyl-zip');
+var zip = require('@vscode/gulp-vinyl-zip');
 
 gulp.task('default', function () {
 	return zip.src('src.zip')
@@ -53,7 +51,7 @@ gulp.task('default', function () {
 
 ```javascript
 var gulp = require('gulp');
-var zip = require('gulp-vinyl-zip');
+var zip = require('@vscode/gulp-vinyl-zip');
 
 gulp.task('default', function () {
 	return gulp.src('src/**/*')
@@ -66,7 +64,7 @@ gulp.task('default', function () {
 
 ```javascript
 var gulp = require('gulp');
-var zip = require('gulp-vinyl-zip').zip; // zip transform only
+var zip = require('@vscode/gulp-vinyl-zip').zip; // zip transform only
 
 gulp.task('default', function () {
 	return gulp.src('src/**/*')

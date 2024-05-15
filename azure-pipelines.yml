@@ -37,5 +37,6 @@ extends:
         testSteps:
           - script: npm ci
           - script: npm run lint
+            condition: and(succeeded(), eq(variables['Agent.OS'], 'Linux'))
           - script: npm test
         publishPackage: ${{ parameters.publishPackage }}

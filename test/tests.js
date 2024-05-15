@@ -41,7 +41,7 @@ describe('gulp-vinyl-zip', function () {
 	it('src should be able to read from archives in streams', function (cb) {
 		var count = 0;
 
-		vfs.src(path.join(__dirname, 'assets', '*.zip'))
+		vfs.src(path.join(__dirname, 'assets', '*.zip'), { encoding: false })
 			.pipe(lib.src())
 			.pipe(through.obj(function (chunk, enc, cb) {
 				count++;
@@ -55,7 +55,7 @@ describe('gulp-vinyl-zip', function () {
 	it('src should emit error to stream', function (done) {
 		var message;
 
-		vfs.src(__filename)
+		vfs.src(__filename, { encoding: false })
 			.pipe(lib.src())
 			.on('error', function (err) {
 				message = err.message;

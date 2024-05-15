@@ -1,6 +1,6 @@
 {
   "name": "@vscode/gulp-vinyl-zip",
-  "version": "2.5.0",
+  "version": "2.6.0",
   "description": "Streaming vinyl adapter for zip archives",
   "main": "index.js",
   "scripts": {

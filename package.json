@@ -36,7 +36,7 @@
     "through2": "^2.0.3",
     "vinyl": "^2.0.2",
     "vinyl-fs": "^4.0.0",
-    "yauzl": "^2.2.1",
+    "yauzl": "^3.2.1",
     "yazl": "^2.2.1"
   },
   "devDependencies": {

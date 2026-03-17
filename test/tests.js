@@ -63,7 +63,7 @@ describe('gulp-vinyl-zip', function () {
 			})
 			.pipe(through.obj((file, enc, next) => next(null, file), function () { this.emit('end'); }))
 			.on('end', () => {
-				assert.strictEqual('end of central directory record signature not found', message);
+				assert.strictEqual('End of central directory record signature not found. Either not a zip file, or file is truncated.', message);
 				done();
 			});
 	});

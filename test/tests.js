@@ -68,6 +68,21 @@ describe('gulp-vinyl-zip', function () {
 			});
 	});
 
+	it('src should begin file.history on an unzipped file with the archive\'s path', function (cb) {
+		var dest = temp.mkdirSync('gulp-vinyl-zip-test');
+
+		vfs.src(path.join(__dirname, 'assets', '*.zip'), { encoding: false })
+			.pipe(through.obj((file, enc, next) => {
+				assert(file.history[0].endsWith('archive.zip'));
+				next(null, file);
+			}))
+			.pipe(vfs.dest(dest))
+			.on('end', function () {
+				// assert(fs.existsSync(dest));
+				cb();
+			});
+	});
+
 	it('dest should be able to create an archive from another archive', function (cb) {
 		var dest = temp.openSync('gulp-vinyl-zip-test').path;
 

@@ -8,6 +8,8 @@ var path = require('path');
 var through = require('through2');
 var temp = require('temp').track();
 var vfs = require('vinyl-fs');
+var File = require('vinyl');
+var yazl = require('yazl');
 var lib = require('..');
 
 describe('gulp-vinyl-zip', function () {
@@ -66,6 +68,22 @@ describe('gulp-vinyl-zip', function () {
 				assert.strictEqual('End of central directory record signature not found. Either not a zip file, or file is truncated.', message);
 				done();
 			});
+	});
+
+	it('src should reject symlinks that traverse outside the destination', function (done) {
+		var zip = new yazl.ZipFile();
+		var chunks = [];
+		zip.addBuffer(Buffer.from('../../outside'), 'link', { mode: 0o120777 });
+		zip.outputStream.on('data', function (chunk) { chunks.push(chunk); });
+		zip.outputStream.on('end', function () {
+			var src = lib.src();
+			src.on('error', function (err) {
+				assert.strictEqual('Unsafe symlink target: ../../outside', err.message);
+				done();
+			});
+			src.end(new File({ contents: Buffer.concat(chunks) }));
+		});
+		zip.end();
 	});
 
 	it('dest should be able to create an archive from another archive', function (cb) {

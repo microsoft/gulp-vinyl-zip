@@ -43,10 +43,5 @@
     "mocha": "^10.2.0",
     "standard": "^17.1.2",
     "temp": "^0.8.1"
-  },
-  "overrides": {
-    "mocha": {
-      "serialize-javascript": "^7.1.0"
-    }
   }
 }

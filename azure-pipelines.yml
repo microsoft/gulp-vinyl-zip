@@ -29,11 +29,11 @@ extends:
           - script: npm ci
         testPlatforms:
           - name: Linux
-            nodeVersions: [18.x, 20.x, 22.x]
+            nodeVersions: [22.x, 24.x]
           - name: MacOS
-            nodeVersions: [18.x, 20.x, 22.x]
+            nodeVersions: [22.x, 24.x]
           - name: Windows
-            nodeVersions: [18.x, 20.x, 22.x]
+            nodeVersions: [22.x, 24.x]
         testSteps:
           - script: npm ci
           - script: npm run lint
